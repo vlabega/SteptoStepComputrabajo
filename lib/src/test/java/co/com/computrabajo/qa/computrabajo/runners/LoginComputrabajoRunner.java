@@ -30,6 +30,7 @@ public class LoginComputrabajoRunner {
 */
 
 
+//Runer del REPGIT
 package co.com.computrabajo.qa.computrabajo.runners;
 
 import org.junit.runner.RunWith;
