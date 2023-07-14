@@ -1,0 +1,6 @@
+cargaBrowser:Carga del Browser
+cargaPagina:Carga de la Pagina Principal
+ejecutarGiven:Ejecutar tarea del Given cargar Home Page
+maxBrowser:Maximizar el Browser
+errorConexion:Error al establecer conexión
+errorControlBrowser: El Browser No Cargo

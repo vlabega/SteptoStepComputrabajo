@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="001d6267af09bd09e1b7842a577840d1d6a2b66ebb237272b80c0a2cf2e7546d.html">Login Computrabajo</a></span>
+                > <span class="truncate-60"><a
+                    href="75b663ca52f77d9171ceb845304a25fbfb9f8da1aece448c1e03a7c3331a2fa4.html">Login computrabajo </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 13-07-2023 16:17</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Login Computrabajo </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a Web User<br />
+I want to use Computrabajo<br />
+to search job in different companies
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Login computrabajo
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="be17bf500603a6aadd6625728357501bfaae68dde917a5248b01b6199edcc37b.png" title=" Given that the User want do login in the application" width="1366"/>
+                <img src="be17bf500603a6aadd6625728357501bfaae68dde917a5248b01b6199edcc37b.png" title=" Vlady open the browser" width="1366"/>
+                <img src="be17bf500603a6aadd6625728357501bfaae68dde917a5248b01b6199edcc37b.png" title=" Vlady opens the Computrabajo home page" width="1366"/>
+                <img src="cae1dc001363cc9b700e6e8f0a77fcb3c5f0f36b2ce98af88fc579485afbc1a4.png" title=" Vlady opens the Computrabajo home page (completed)" width="1366"/>
+                <img src="cae1dc001363cc9b700e6e8f0a77fcb3c5f0f36b2ce98af88fc579485afbc1a4.png" title=" Vlady open the browser (completed)" width="1366"/>
+                <img src="cae1dc001363cc9b700e6e8f0a77fcb3c5f0f36b2ce98af88fc579485afbc1a4.png" title=" Vlady open the country" width="1366"/>
+                <img src="cae1dc001363cc9b700e6e8f0a77fcb3c5f0f36b2ce98af88fc579485afbc1a4.png" title=" Vlady clicks on computrabajo link Pais" width="1366"/>
+                <img src="255eb317cf9a62d205ed91e4fe74bee0459454095143ec728fe8868170f0ced4.png" title=" Vlady clicks on computrabajo link Pais (completed)" width="1366"/>
+                <img src="255eb317cf9a62d205ed91e4fe74bee0459454095143ec728fe8868170f0ced4.png" title=" Vlady open the country (completed)" width="1366"/>
+                <img src="255eb317cf9a62d205ed91e4fe74bee0459454095143ec728fe8868170f0ced4.png" title=" Vlady open the panel" width="1366"/>
+                <img src="255eb317cf9a62d205ed91e4fe74bee0459454095143ec728fe8868170f0ced4.png" title=" Vlady clicks on computrabajo icon Panel" width="1366"/>
+                <img src="6eb50f67ca09d0ee690851a4e028328c82d278863d83facd09fd7145cd0a90bb.png" title=" Vlady clicks on computrabajo icon Panel (completed)" width="1366"/>
+                <img src="2ea8031f396ad1ef765a6c27a21e2b88cc023ac6dde50476e048072b353f6fda.png" title=" Vlady open the panel (completed)" width="1366"/>
+                <img src="2ea8031f396ad1ef765a6c27a21e2b88cc023ac6dde50476e048072b353f6fda.png" title=" Given that the User want do login in the application (completed)" width="1366"/>
+                <img src="aedc3c24d8caef0aabba69c10ca2a1c4f0133088bf37408291793b6a73a37fb7.png" title=" When User enter credentials
+| User | Password |
+| vlabega@gmail.com | LimaPanama2023* |" width="1366"/>
+                <img src="aedc3c24d8caef0aabba69c10ca2a1c4f0133088bf37408291793b6a73a37fb7.png" title=" Vlady enter credentials" width="1366"/>
+                <img src="aedc3c24d8caef0aabba69c10ca2a1c4f0133088bf37408291793b6a73a37fb7.png" title=" Vlady clicks on computrabajo INGRESAR" width="1366"/>
+                <img src="de5b1f2af0e2124742ff699f36abc005f1eba9e50ebf53b551fba5ebe3e567e6.png" title=" Vlady clicks on computrabajo mail TextBox" width="1366"/>
+                <img src="9cd8eac40bcebb364b1658c4025258dfd6c1c946857ea184a87d789e0d1e93fb.png" title=" Vlady clicks on computrabajo mail TextBox (completed)" width="1366"/>
+                <img src="9cd8eac40bcebb364b1658c4025258dfd6c1c946857ea184a87d789e0d1e93fb.png" title=" Vlady enters 'vlabega@gmail.com' into computrabajo mail TextBox" width="1366"/>
+                <img src="7caa2370b9106a63f341497e52e2886cb06708a7aa22c1e5d2a8df20915892ad.png" title=" Vlady enters 'vlabega@gmail.com' into computrabajo mail TextBox (completed)" width="1366"/>
+                <img src="7caa2370b9106a63f341497e52e2886cb06708a7aa22c1e5d2a8df20915892ad.png" title=" Vlady clicks on computrabajo continuar Button" width="1366"/>
+                <img src="25294c33cdfe4fd04d215da7947645556cd993b1d00811e494e9cb06166f4f0e.png" title=" Vlady clicks on computrabajo continuar Button (completed)" width="1366"/>
+                <img src="37ea56533c9f55cc77b3bef0e4ead8dab3fbd097bc74a9af12fcf40ffea2fdf2.png" title=" Vlady clicks on computrabajo password Button" width="1366"/>
+                <img src="512477c72df45462fda77ed6b5dd7cf19fe93b727624a2455b6382bcf13a584e.png" title=" Vlady clicks on computrabajo password Button (completed)" width="1366"/>
+                <img src="512477c72df45462fda77ed6b5dd7cf19fe93b727624a2455b6382bcf13a584e.png" title=" Vlady enters 'LimaPanama2023*' into computrabajo password Button" width="1366"/>
+                <img src="f151eb8652b6b65c8f214c01838a76a15be76969bdacb7e7554d35755df7b83a.png" title=" Vlady enters 'LimaPanama2023*' into computrabajo password Button (completed)" width="1366"/>
+                <img src="f151eb8652b6b65c8f214c01838a76a15be76969bdacb7e7554d35755df7b83a.png" title=" Vlady clicks on computrabajo Iniciar Button" width="1366"/>
+                <img src="7aff6a3bfe4867b93ac4c653daacc1675068abb92f7e822bc1195ac38335462a.png" title=" Vlady clicks on computrabajo Iniciar Button (completed)" width="1366"/>
+                <img src="c39d5c122e5f4d71665dc123862732b984ee32bd52ab131a214f34eb35d5fa88.png" title=" Vlady enter credentials (completed)" width="1366"/>
+                <img src="c39d5c122e5f4d71665dc123862732b984ee32bd52ab131a214f34eb35d5fa88.png" title=" When User enter credentials
+| User | Password |
+| vlabega@gmail.com | LimaPanama2023* | (completed)" width="1366"/>
+                <img src="bf78a486170322cf00a22be9fc7bd1b1571cfd71f0e30de781a14b65263125d0.png" title=" Then User should see the oferts country in the screen" width="1366"/>
+                <img src="bf78a486170322cf00a22be9fc7bd1b1571cfd71f0e30de781a14b65263125d0.png" title=" Vlady assert credentials" width="1366"/>
+                <img src="bf78a486170322cf00a22be9fc7bd1b1571cfd71f0e30de781a14b65263125d0.png" title=" Vlady clicks on computrabajo icon Panel" width="1366"/>
+                <img src="1f074ac5434ae50aa5d32e0906c01b3d199c74194a1909772ab6c34468f97187.png" title=" Vlady assert credentials (completed)" width="1366"/>
+                <img src="1f074ac5434ae50aa5d32e0906c01b3d199c74194a1909772ab6c34468f97187.png" title=" Then User should see the oferts country in the screen (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.7.1</span>
+</div>
+</body>
+</html>
