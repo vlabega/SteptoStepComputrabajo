@@ -24,8 +24,8 @@
 	buildscript {
 	    repositories {
 	    
+	    mavenCentral()
 	        jcenter()
-	        mavenCentral()
 	        //mavenLocal()
 	    }
 	    ext {
@@ -55,6 +55,9 @@
 	    
 	    // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
 	    implementation group: 'io.cucumber', name: 'cucumber-core', version: '7.12.1'
+	    
+	    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+       implementation 'io.cucumber:cucumber-java:7.13.0'
 		 
 		// https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber
        testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.8.1'
@@ -131,6 +134,8 @@
 	   // https://mvnrepository.com/artifact/io.restassured/rest-assured
        implementation 'io.restassured:rest-assured:4.0.0'
 
+      
+       
 	    
 	}
 	gradle.startParameter.continueOnFailure = true 

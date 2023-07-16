@@ -4,11 +4,11 @@
   to search for jobs in different companies and countries
 
   Background: LoginComputrabajo
-    Given that the User wants to log in to the application
-    When the User enters their credentials
-      | User              | Password        |
-      | vlabega@gmail.com | LimaPanama2023* |
-    Then the User should see the job offers in the screen
+    Given that the User want do login in the application
+    When User enter credentials
+      | User               | Password        |
+      | vlabega@gmail.com  | LimaPanama2023* |
+    Then User should see the oferts country in the screen
 
   @MiAreaComputrabajo
   Scenario: Open Mi Area
