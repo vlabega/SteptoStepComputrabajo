@@ -32,7 +32,9 @@ import co.com.computrabajo.qa.computrabajo.tasks.OpenThePanel;
 import co.com.computrabajo.qa.computrabajo.userinterface.CompuTrabajoHomePanel;
 import co.com.computrabajo.qa.computrabajo.userinterface.ComputrabajoHomePage;
 import co.com.computrabajo.qa.computrabajo.utils.ConsoleMessageUtil;
+import co.com.computrabajo.qa.computrabajo.utils.ConsoleMessageUtilDataDriven;
 import co.com.computrabajo.qa.computrabajo.utils.SleepUtil;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -63,6 +65,8 @@ public class LoginComputrabajoStepdefinition {
 		private ComputrabajoHomePage computrabajoHomePage;
 		//private PageObject computrabajoHomePage;
 		
+		// Variable para realizar un seguimiento del último escenario
+	    private boolean isLastScenario = false;
 
 		// Metodo para asociar el actor al driver, el actor puede navegar en la web con
 		// el driver
@@ -72,7 +76,14 @@ public class LoginComputrabajoStepdefinition {
 			ScreenshotUtil.init();
 		}
 	
+		@After
+		public void tearDown() {
+		    if (isLastScenario) {
+		        hisBrowser.quit();
+		    }
+		}
 	
+
 
 	@Given("that the User want do login in the application")
 	public void thattheuserwantdologinintheapplication() throws Exception  {
@@ -190,7 +201,60 @@ public class LoginComputrabajoStepdefinition {
 		vlady.attemptsTo(AssertCredentials.Validate(null));
 		ScreenshotUtil.captureScreenshot("offers_screen");
         ScreenshotUtil.close();
-
 	}	
+        
+    //Area de trabajo
+        @Given("that the User wants to open the Mi Area panel")
+        public void thattheuserwantstoopenthemiareapanel() {
+            // Write code here that turns the phrase above into concrete actions
+        	System.out.println("Given del Area de trabajo");
+        	vlady.attemptsTo(Click.on(CompuTrabajoHomePanel.COMPUTRABAJO_USER));
+        	vlady.attemptsTo(Click.on(CompuTrabajoHomePanel.COMPUTRABAJO_ICONPANEL));
+        	
+        	SleepUtil.sleepSeconds(5);
+        }
+
+        @When("the User navigates to the Mi Area section")
+        public void theusernavigatestothemiareasection() {
+            // Write code here that turns the phrase above into concrete actions
+        	System.out.println("GWHEN del Area de trabajo");
+          
+        }
+
+        @Then("the User should see the job search results for a specific CV")
+        public void theusershouldseethejobsearchresultsforaspecificcv() {
+            // Write code here that turns the phrase above into concrete actions
+        	System.out.println("THEN del Area de trabajo");
+        	vlady.attemptsTo(Click.on(CompuTrabajoHomePanel.COMPUTRABAJO_HOJAVIDA));
+        	SleepUtil.sleepSeconds(5);
+          
+        }
+        
+    
+        //Buscar Job
+        @Given("that the User wants to find a new job")
+        public void thattheuserwantstofindanewjob() {
+        	ConsoleMessageUtilDataDriven.printMessage("GivenSearchJob");
+        	SleepUtil.sleepSeconds(2);
+        }
+
+        @When("the User writes the search term")
+        public void theuserwritesthesearchterm() {
+        	ConsoleMessageUtilDataDriven.printMessage("WhenSearchJob");
+        	SleepUtil.sleepSeconds(2);
+        }
+
+        @Then("the User should see the job search results")
+        public void theusershouldseethejobsearchresults() {
+        	ConsoleMessageUtilDataDriven.printMessage("ThemSearchJob");
+        	SleepUtil.sleepSeconds(2);
+        }
+        
+        
+     // Método adicional para marcar el último escenario
+        @After
+        public void setLastScenarioFlag() {
+            isLastScenario = true;
+        }
 	
 }

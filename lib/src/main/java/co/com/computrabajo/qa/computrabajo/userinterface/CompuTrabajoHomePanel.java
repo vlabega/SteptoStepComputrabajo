@@ -27,4 +27,8 @@ public class CompuTrabajoHomePanel extends PageObject{
 	
 	public static final Target COMPUTRABAJO_USER = Target.the("computrabajo User LSBRL").located(By.id("usernamehj"));
 	
+	public static final Target COMPUTRABAJO_HOJAVIDA = Target.the("computrabajo Hoja de Vida BUTTON").locatedByFirstMatching("//*[@id=\"secMenu\"]/div/ul/li[2]/a");
+	
+	//*[@id="open_menu"]
+	
 }
