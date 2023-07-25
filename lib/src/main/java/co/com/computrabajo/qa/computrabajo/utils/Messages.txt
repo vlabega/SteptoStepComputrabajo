@@ -4,3 +4,6 @@ ejecutarGiven:Ejecutar tarea del Given cargar Home Page
 maxBrowser:Maximizar el Browser
 errorConexion:Error al establecer conexión
 errorControlBrowser: El Browser No Cargo
+GivenSearchJob:GivenSearchJob
+WhenSearchJob:WhenSearchJob
+ThemSearchJob:ThemSearchJob

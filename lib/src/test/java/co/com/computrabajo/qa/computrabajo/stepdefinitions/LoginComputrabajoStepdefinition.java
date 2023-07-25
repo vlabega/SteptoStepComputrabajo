@@ -32,6 +32,7 @@ import co.com.computrabajo.qa.computrabajo.tasks.OpenThePanel;
 import co.com.computrabajo.qa.computrabajo.userinterface.CompuTrabajoHomePanel;
 import co.com.computrabajo.qa.computrabajo.userinterface.ComputrabajoHomePage;
 import co.com.computrabajo.qa.computrabajo.utils.ConsoleMessageUtil;
+import co.com.computrabajo.qa.computrabajo.utils.ConsoleMessageUtilDataDriven;
 import co.com.computrabajo.qa.computrabajo.utils.SleepUtil;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -230,6 +231,28 @@ public class LoginComputrabajoStepdefinition {
         }
         
     
+<<<<<<< HEAD
+=======
+        //Buscar Job
+        @Given("that the User wants to find a new job")
+        public void thattheuserwantstofindanewjob() {
+        	ConsoleMessageUtilDataDriven.printMessage("GivenSearchJob");
+        	SleepUtil.sleepSeconds(2);
+        }
+
+        @When("the User writes the search term")
+        public void theuserwritesthesearchterm() {
+        	ConsoleMessageUtilDataDriven.printMessage("WhenSearchJob");
+        	SleepUtil.sleepSeconds(2);
+        }
+
+        @Then("the User should see the job search results")
+        public void theusershouldseethejobsearchresults() {
+        	ConsoleMessageUtilDataDriven.printMessage("ThemSearchJob");
+        	SleepUtil.sleepSeconds(2);
+        }
+        
+>>>>>>> master
         
      // Método adicional para marcar el último escenario
         @After

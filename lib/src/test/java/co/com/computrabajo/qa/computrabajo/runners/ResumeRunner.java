@@ -8,10 +8,30 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
+<<<<<<< HEAD
         features = "src/test/resources/features/MiAreaComputrabajo.feature", 
         glue = "co.com.computrabajo.qa.computrabajo.stepdefinitions",
         tags = ("@LoginComputrabajo or @MiAreaComputrabajo"),
 		snippets = CucumberOptions.SnippetType.CAMELCASE
+=======
+        //features = "src/test/resources/features/BuscarEmpleo.feature", 
+        //glue = "co.com.computrabajo.qa.computrabajo.stepdefinitions",
+        //tags = ("@LoginComputrabajo or @MiAreaComputrabajo or @BuscarEmpleo"),
+        //tags = "@wip",
+		//snippets = CucumberOptions.SnippetType.CAMELCASE
+		
+		features = "src/test/resources/features",
+        glue = "co.com.computrabajo.qa.computrabajo.stepdefinitions",
+        tags = "@LoginComputrabajo or @MiAreaComputrabajo or @BuscarEmpleo",
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        dryRun = false,
+        monochrome = true,
+        plugin = {
+            "usage:target/cucumber-reports/cucumber-usage.json",
+            "json:target/cucumber-reports/cucumber.json"
+        }
+
+>>>>>>> master
         
 )
 public class ResumeRunner {
