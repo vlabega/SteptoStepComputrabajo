@@ -31,6 +31,8 @@ import co.com.computrabajo.qa.computrabajo.tasks.OpenTheCountry;
 import co.com.computrabajo.qa.computrabajo.tasks.OpenThePanel;
 import co.com.computrabajo.qa.computrabajo.userinterface.CompuTrabajoHomePanel;
 import co.com.computrabajo.qa.computrabajo.userinterface.ComputrabajoHomePage;
+import co.com.computrabajo.qa.computrabajo.utils.ActorUtil;
+import co.com.computrabajo.qa.computrabajo.utils.BrowserUtil;
 import co.com.computrabajo.qa.computrabajo.utils.ConsoleMessageUtil;
 import co.com.computrabajo.qa.computrabajo.utils.ConsoleMessageUtilDataDriven;
 import co.com.computrabajo.qa.computrabajo.utils.SleepUtil;
@@ -54,13 +56,14 @@ public class LoginComputrabajoStepdefinition {
 	
 	
 	    // Inicializamos el Driver
-		@Managed(driver = "chrome") // debe estar en la raiz del proyecto
-		private WebDriver hisBrowser;
+		//@Managed(driver = "chrome") // debe estar en la raiz del proyecto
+		//private WebDriver hisBrowser;
 		
 		// Instancia el Actor en un nombre de Aator.
 		private Actor vlady = Actor.named("Vlady");
-		
-		
+	    //private Actor vlady;
+	    
+	    
 		// Instancia // Instancio otro para abrir
 		private ComputrabajoHomePage computrabajoHomePage;
 		//private PageObject computrabajoHomePage;
@@ -72,14 +75,21 @@ public class LoginComputrabajoStepdefinition {
 		// el driver
 		@Before
 		public void setup() {
-			vlady.can(BrowseTheWeb.with(hisBrowser));
+			
+			
+			vlady.can(BrowseTheWeb.with(BrowserUtil.getDriver()));
+			//vlady.can(BrowseTheWeb.with(hisBrowser));
+			
+			
 			ScreenshotUtil.init();
 		}
 	
 		@After
 		public void tearDown() {
 		    if (isLastScenario) {
-		        hisBrowser.quit();
+		        //hisBrowser.quit();
+		    	// Cerrar el navegador utilizando el método de BrowserUtil
+	            BrowserUtil.tearDown();
 		    }
 		}
 	
@@ -89,9 +99,11 @@ public class LoginComputrabajoStepdefinition {
 	public void thattheuserwantdologinintheapplication() throws Exception  {
 	   
 		//vlady.wasAbleTo(OpenTheBrowser.at(computrabajoHomePage));
-		ConsoleMessageUtil.printMessage("maxBrowser");
-		hisBrowser.manage().window().maximize();
-		
+		//ConsoleMessageUtil.printMessage("maxBrowser");
+		//hisBrowser.manage().window().maximize();
+		// Maximizar la ventana utilizando BrowserUtil
+		//BrowserUtil.getDriver().manage().window().maximize();
+        
 		ConsoleMessageUtil.printMessage("ejecutarGiven");
 		vlady.wasAbleTo(OpenTheBrowser.at(computrabajoHomePage));
 		// Codigo para ubicar los elementos y llegar al login
@@ -231,8 +243,6 @@ public class LoginComputrabajoStepdefinition {
         }
         
     
-<<<<<<< HEAD
-=======
         //Buscar Job
         @Given("that the User wants to find a new job")
         public void thattheuserwantstofindanewjob() {
@@ -252,7 +262,6 @@ public class LoginComputrabajoStepdefinition {
         	SleepUtil.sleepSeconds(2);
         }
         
->>>>>>> master
         
      // Método adicional para marcar el último escenario
         @After

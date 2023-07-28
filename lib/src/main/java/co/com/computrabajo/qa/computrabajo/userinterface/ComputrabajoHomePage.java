@@ -11,6 +11,8 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://www.computrabajo.com")
+//@DefaultUrl(DefaultURLUtil.getDefaultUrl())
+//@DefaultUrl(ConfigUtil.getDefaultUrl())
 public class ComputrabajoHomePage extends PageObject{
 
 	// Mapear los objetos.

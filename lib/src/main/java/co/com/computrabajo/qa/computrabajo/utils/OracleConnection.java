@@ -4,7 +4,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import java.sql.*;
 
-import co.com.bancolombia.certification.FIINQUIRECDT.interactions.InsertRequest2;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

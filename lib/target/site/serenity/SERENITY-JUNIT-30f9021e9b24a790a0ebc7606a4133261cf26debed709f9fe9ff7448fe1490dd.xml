@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="LoginComputrabajo" skipped="0" tests="1" time="0.29" timestamp="2023-07-28 09:38:44"><testcase name="Login computrabajo"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+co.com.computrabajo.qa.computrabajo.stepdefinitions.LoginComputrabajoStepdefinition.thattheuserwantdologinintheapplication(LoginComputrabajoStepdefinition.java:105)&#13;
+✽.that the User want do login in the application(file:///C:/Users/Arbusta/eclipse-workspace/SteptoStepComputrabajo/lib/src/test/resources/features/LoginComputrabajo.feature:8)&#13;
+</system-err></testcase></testsuite>

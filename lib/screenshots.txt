@@ -1,3 +1,3 @@
-007_login_screen.png
-008_enter_credentials_screen.png
-009_offers_screen.png
+013_login_screen.png
+014_enter_credentials_screen.png
+015_offers_screen.png
